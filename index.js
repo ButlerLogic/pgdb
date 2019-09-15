@@ -1,7 +1,7 @@
 require('localenvironment')
 
 const { EventEmitter } = require('events')
-const { Client, Pool } = require('pg')
+const { Pool } = require('pg')
 const Utility = require('./utility')
 const MustHave = require('musthave')
 const mh = new MustHave()
@@ -82,7 +82,7 @@ class PostgresClient extends EventEmitter {
             command: rawResults.command,
             results: rawResults.rows.map(data => {
               let record = {}
-              fields.forEach((field, index) => record[field] = data[index])
+              fields.forEach((field, index) => { record[field] = data[index] })
 
               return record
             })
@@ -141,10 +141,10 @@ class PostgresClient extends EventEmitter {
     return this.PRIVATE.createResultSet(result)
   }
 
-  ping (callback) {
+  ping (next) {
     this.query('SELECT NOW();')
-      .then(() => callback(true))
-      .catch(() => callback(false))
+      .then(() => next(true))
+      .catch(() => next(false))
   }
 
   monitor (interval = 15000) {

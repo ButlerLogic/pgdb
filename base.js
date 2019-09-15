@@ -43,15 +43,15 @@ class Endpoint {
     //     return utility.errorResponse(res)
     //   }
 
-      // DB.query(this.SQLINSERT(record, req.user), utility.validResult(res, (result) => {
-      //   record = new this.Model(result[0])
-      //
-      //   let representation = record.representation
-      //
-      //   representation.href = `${req.protocol}://${req.get('Host')}${req.path}/${record.id}`
-      //
-      //   res.status(201).json(representation)
-      // }))
+    // DB.query(this.SQLINSERT(record, req.user), utility.validResult(res, (result) => {
+    //   record = new this.Model(result[0])
+    //
+    //   let representation = record.representation
+    //
+    //   representation.href = `${req.protocol}://${req.get('Host')}${req.path}/${record.id}`
+    //
+    //   res.status(201).json(representation)
+    // }))
     // })
   }
 
@@ -85,22 +85,22 @@ class Endpoint {
   read (req, res) {
     res.sendStatus(501)
     // utility.validId(req, res, (id) => {
-      // DB.query(`
-      //   SELECT  *
-      //   FROM    ${this.Table}
-      //   WHERE   seqid = ${id};
-      // `, utility.validResult(res, (result) => {
-      //   if (result.length === 0) {
-      //     return utility.errorResponse(res, 404, 'Not Found')
-      //   }
-      //
-      //   let record = new this.Model(result[0])
-      //   let representation = record.representation
-      //
-      //   representation.href = `${req.protocol}://${req.get('Host')}${req.path}`
-      //
-      //   res.status(200).json(representation)
-      // }))
+    // DB.query(`
+    //   SELECT  *
+    //   FROM    ${this.Table}
+    //   WHERE   seqid = ${id};
+    // `, utility.validResult(res, (result) => {
+    //   if (result.length === 0) {
+    //     return utility.errorResponse(res, 404, 'Not Found')
+    //   }
+    //
+    //   let record = new this.Model(result[0])
+    //   let representation = record.representation
+    //
+    //   representation.href = `${req.protocol}://${req.get('Host')}${req.path}`
+    //
+    //   res.status(200).json(representation)
+    // }))
     // })
   }
 

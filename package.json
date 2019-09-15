@@ -1,6 +1,6 @@
 {
   "name": "@ecor/pgdb",
-  "version": "1.0.0",
+  "version": "1.0.0-beta.1",
   "description": "A PostgreSQL client wrapper for use within an API service.",
   "main": "index.js",
   "scripts": {
@@ -33,5 +33,10 @@
     "localenvironment": "^1.0.2",
     "musthave": "^1.0.2",
     "pg": "^7.11.0"
+  },
+  "standard": {
+    "globals": [
+      "NGN"
+    ]
   }
 }
